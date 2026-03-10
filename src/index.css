@@ -1,0 +1,486 @@
+@import "tailwindcss";
+
+:root {
+  --kuning: #F5A623;
+  --coklat: #7B4F2E;
+  --krem: #FFF8EE;
+  --hijau: #4CAF50;
+  --teks: #2C1A0E;
+  --card-bg: #FFFDF8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--krem);
+  color: var(--teks);
+}
+
+/* ===== HEADER / HERO ===== */
+header {
+  background: linear-gradient(135deg, #7B4F2E 0%, #A0522D 60%, #F5A623 100%);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.logo span { color: var(--kuning); }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--kuning); }
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(160deg, #A0522D 0%, #F5A623 100%);
+  text-align: center;
+  padding: 50px 20px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  top: -100px; right: -100px;
+}
+
+.hero-decor {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.15);
+  z-index: 0;
+}
+
+.decor-1 { top: 10%; left: 5%; transform: rotate(-15deg); }
+.decor-2 { top: 60%; left: 15%; transform: rotate(20deg); }
+.decor-3 { top: 20%; right: 10%; transform: rotate(45deg); }
+.decor-4 { top: 70%; right: 5%; transform: rotate(-25deg); }
+.decor-5 { top: 5%; left: 40%; transform: rotate(10deg); }
+.decor-6 { top: 80%; right: 40%; transform: rotate(-10deg); }
+
+.hero h1, .hero p, .hero .btn-pesan {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #fff;
+  margin-bottom: 16px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.hero-emoji { font-size: 3rem; margin-bottom: 16px; display: block; }
+
+.btn-pesan {
+  background: #fff;
+  color: var(--coklat);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-pesan:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== BADGE PROMO ===== */
+.promo-bar {
+  background: var(--kuning);
+  text-align: center;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--coklat);
+  letter-spacing: 0.5px;
+}
+
+/* ===== MENU SECTION ===== */
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--coklat);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-sub {
+  text-align: center;
+  color: #9B7B5A;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-img {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFF3D4, #FFE0A3);
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body { padding: 18px; }
+
+.card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--coklat);
+}
+
+.card-desc {
+  font-size: 0.88rem;
+  color: #9B7B5A;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.harga {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--kuning);
+}
+
+.btn-tambah {
+  background: var(--coklat);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn-tambah:hover { background: #A0522D; }
+
+/* ===== KEUNGGULAN ===== */
+.keunggulan-bg {
+  background: linear-gradient(135deg, #7B4F2E, #A0522D);
+  border-radius: 24px;
+  padding: 50px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.unggulan-item .icon { font-size: 2.8rem; margin-bottom: 12px; }
+.unggulan-item h3 { color: var(--kuning); font-size: 1.1rem; margin-bottom: 8px; }
+.unggulan-item p { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.5; }
+
+/* ===== CARA PESAN ===== */
+.langkah-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  counter-reset: langkah;
+}
+
+.langkah {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+.langkah-num {
+  width: 44px;
+  height: 44px;
+  background: var(--kuning);
+  color: var(--coklat);
+  font-weight: 900;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.langkah h3 { color: var(--coklat); margin-bottom: 8px; font-size: 1.05rem; }
+.langkah p { color: #9B7B5A; font-size: 0.88rem; line-height: 1.5; }
+
+/* ===== KONTAK / PESAN ===== */
+.kontak-wrap {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.kontak-wrap h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--coklat);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.kontak-wrap p { color: #9B7B5A; margin-bottom: 24px; }
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+  transition: transform 0.2s;
+}
+
+.btn-wa:hover { transform: translateY(-3px); }
+
+.jam-buka {
+  margin-top: 24px;
+  background: var(--krem);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.jam-buka p { color: var(--coklat); font-weight: 600; margin: 4px 0; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--coklat);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 24px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+footer strong { color: var(--kuning); }
+
+/* ===== CART FLOATING ===== */
+.cart-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--coklat);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 200;
+  transition: transform 0.2s;
+}
+
+.cart-btn:hover { transform: scale(1.05); }
+.cart-badge {
+  background: var(--kuning);
+  color: var(--coklat);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+/* ===== MODAL KERANJANG ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.aktif { display: flex; }
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 450px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--coklat);
+  margin-bottom: 16px;
+}
+
+.item-keranjang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0e8dc;
+}
+
+.item-keranjang span { color: var(--coklat); font-weight: 600; }
+.item-keranjang small { color: #9B7B5A; }
+
+.total-baris {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--coklat);
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 2px solid var(--kuning);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-tutup {
+  flex: 1;
+  background: #eee;
+  color: var(--coklat);
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-konfirm {
+  flex: 2;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  header { 
+    flex-direction: column; 
+    gap: 12px;
+    padding: 16px; 
+    text-align: center;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  nav a { 
+    margin-left: 0; 
+    font-size: 0.85rem; 
+  }
+  .hero { padding: 40px 20px 60px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  .keunggulan-bg { margin: 0 10px; padding: 30px 20px; }
+  .btn-pesan { padding: 12px 24px; font-size: 1rem; }
+  .btn-wa { padding: 12px 24px; font-size: 1rem; width: 100%; justify-content: center; }
+  .kontak-wrap { padding: 24px 16px; }
+  .kontak-wrap h2 { font-size: 1.5rem; }
+}
