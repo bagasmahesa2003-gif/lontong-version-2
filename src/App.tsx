@@ -172,7 +172,7 @@ export default function App() {
             Pesan via WhatsApp
           </a>
           <div className="jam-buka">
-            <p>⏰ <strong>Jam Buka:</strong> Senin – Sabtu, 06.00 – 12.00 WIB</p>
+            <p>⏰ <strong>Jam Buka:</strong> Senin – Sabtu, 06.00 – 11.30 WIB</p>
             <p>📍 <strong>Lokasi:</strong> Citra Indah City, Bukit Aster</p>
           </div>
         </div>
