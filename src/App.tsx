@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Utensils, Soup, Carrot, Coffee, EggFried, Wheat } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import lontongImg from '../public/lontong.png';
+import tahuImg from '../public/tahu isi.png';
+import bakwanImg from '../public/bakwan.png';
+
 const menuData = [
-  { id:1, nama:'Lontong', desc:'tersedia lontong sayur dan Oncom!', harga:2000, image:'/lontong.png' },
-  { id:2, nama:'Tahu isi', desc:'tahu goreng dengan isi sayur', harga:2000, image:'/tahu isi.png' },
-  { id:3, nama:'Bakwan', desc:'Bakwan sayur dengan aneka sayuran segar', harga:2000, image:'/bakwan.png' },
+  { id:1, nama:'Lontong', desc:'tersedia lontong sayur dan Oncom!', harga:2000, image: lontongImg },
+  { id:2, nama:'Tahu isi', desc:'tahu goreng dengan isi sayur', harga:2000, image: tahuImg },
+  { id:3, nama:'Bakwan', desc:'Bakwan sayur dengan aneka sayuran segar', harga:2000, image: bakwanImg },
 ];
 
 export default function App() {
